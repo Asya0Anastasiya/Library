@@ -41,12 +41,13 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.DarkRed;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Berlin Sans FB", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox1.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.textBox1.Location = new System.Drawing.Point(269, 6);
             this.textBox1.Margin = new System.Windows.Forms.Padding(6);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(439, 45);
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(454, 46);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Welcome to our Library!";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -62,12 +63,12 @@
             this.tableLayoutPanel1.Controls.Add(this.contacts, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.menu, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.support, 2, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(299, 96);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(269, 95);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(398, 76);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(454, 91);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // contacts
@@ -78,7 +79,7 @@
             this.contacts.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.contacts.Location = new System.Drawing.Point(3, 3);
             this.contacts.Name = "contacts";
-            this.contacts.Size = new System.Drawing.Size(126, 70);
+            this.contacts.Size = new System.Drawing.Size(145, 85);
             this.contacts.TabIndex = 0;
             this.contacts.Text = "Contacts";
             this.contacts.UseVisualStyleBackColor = true;
@@ -90,9 +91,9 @@
             this.menu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.menu.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.menu.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.menu.Location = new System.Drawing.Point(135, 3);
+            this.menu.Location = new System.Drawing.Point(154, 3);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(126, 70);
+            this.menu.Size = new System.Drawing.Size(145, 85);
             this.menu.TabIndex = 1;
             this.menu.Text = "Menu";
             this.menu.UseVisualStyleBackColor = false;
@@ -105,9 +106,9 @@
             this.support.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.support.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.support.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.support.Location = new System.Drawing.Point(267, 3);
+            this.support.Location = new System.Drawing.Point(305, 3);
             this.support.Name = "support";
-            this.support.Size = new System.Drawing.Size(128, 70);
+            this.support.Size = new System.Drawing.Size(146, 85);
             this.support.TabIndex = 2;
             this.support.Text = "Support Us";
             this.support.UseVisualStyleBackColor = false;
