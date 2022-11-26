@@ -32,11 +32,19 @@ namespace Library
             TabPage TabPage2 = new();
             TabPage TabPage3 = new();
             TabPage TabPage4 = new();
+            Button inputTitle = new();
+            Button inputAuthor = new();
+            Button inputYear = new();
+            Button inputPages = new();
             this.Controls.Add(TabControl1);
             TabControl1.Controls.Add(TabPage1);
             TabControl1.Controls.Add(TabPage2);
             TabControl1.Controls.Add(TabPage3);
             TabControl1.Controls.Add(TabPage4);
+            TabControl1.Controls.Add(inputTitle);
+            TabControl1.Controls.Add(inputAuthor);
+            TabControl1.Controls.Add(inputYear);
+            TabControl1.Controls.Add(inputPages);
             
             TextBox title = new();
             TextBox author = new();
