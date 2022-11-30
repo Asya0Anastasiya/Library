@@ -19,26 +19,26 @@ namespace Library
         public menuForm()
         {
             InitializeComponent();
-            AutoCompleteStringCollection sourceFind = new()
-            {
-                 "Title",
-                 "Author",
-                "Year",
-            };
-            findBy.AutoCompleteCustomSource = sourceFind;
-            findBy.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            findBy.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            //AutoCompleteStringCollection sourceFind = new()
+            //{
+            //     "Title",
+            //     "Author",
+            //    "Year",
+            //};
+            //findBy.AutoCompleteCustomSource = sourceFind;
+            //findBy.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            //findBy.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
-            AutoCompleteStringCollection sourceSort = new()
-            {
-                "Title",
-                "Author",
-                "Year",
-                "Pages"
-            };
-            sortBy.AutoCompleteCustomSource = sourceSort;
-            sortBy.AutoCompleteMode= AutoCompleteMode.SuggestAppend;
-            sortBy.AutoCompleteSource= AutoCompleteSource.CustomSource;
+            //AutoCompleteStringCollection sourceSort = new()
+            //{
+            //    "Title",
+            //    "Author",
+            //    "Year",
+            //    "Pages"
+            //};
+            //sortBy.AutoCompleteCustomSource = sourceSort;
+            //sortBy.AutoCompleteMode= AutoCompleteMode.SuggestAppend;
+            //sortBy.AutoCompleteSource= AutoCompleteSource.CustomSource;
         }
 
         private void menuForm_Load(object sender, EventArgs e)
@@ -54,7 +54,19 @@ namespace Library
 
         private void find_Click(object sender, EventArgs e)
         {
-
+            switch (choosen)
+            {
+                case "Title":
+                    break;
+                case "Author":
+                    break;
+                case "Year":
+                    Array.Sort(library.books.ToArray(), new BookComparer());
+                    listBox1.Items.AddRange(library.books.ToArray());
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void sort_Click(object sender, EventArgs e)
@@ -67,26 +79,38 @@ namespace Library
 
         }
 
-        private void find_MouseMove(object sender, MouseEventArgs e)
+
+        public string choosen;
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                "Write an option to search for:\n Title\n Author\n Year",
-                "Info",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information,
-                MessageBoxDefaultButton.Button1,
-                MessageBoxOptions.DefaultDesktopOnly);
+            choosen = comboBox1.SelectedIndex.ToString();
         }
 
-        private void sort_MouseMove(object sender, MouseEventArgs e)
+        private void findBy_TextChanged(object sender, EventArgs e)
         {
-            MessageBox.Show(
-               "Write an option to sort for:\n Title\n Author\n Year\n Pages",
-               "Info",
-               MessageBoxButtons.OK,
-               MessageBoxIcon.Information,
-               MessageBoxDefaultButton.Button1,
-               MessageBoxOptions.DefaultDesktopOnly);
+
         }
+
+        //private void find_MouseMove(object sender, MouseEventArgs e)
+        //{
+        //    MessageBox.Show(
+        //        "Write an option to search for:\n Title\n Author\n Year",
+        //        "Info",
+        //        MessageBoxButtons.OK,
+        //        MessageBoxIcon.Information,
+        //        MessageBoxDefaultButton.Button1,
+        //        MessageBoxOptions.DefaultDesktopOnly);
+        //}
+
+        //private void sort_MouseMove(object sender, MouseEventArgs e)
+        //{
+        //    MessageBox.Show(
+        //       "Write an option to sort for:\n Title\n Author\n Year\n Pages",
+        //       "Info",
+        //       MessageBoxButtons.OK,
+        //       MessageBoxIcon.Information,
+        //       MessageBoxDefaultButton.Button1,
+        //       MessageBoxOptions.DefaultDesktopOnly);
+        //}
     }
 }

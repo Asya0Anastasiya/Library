@@ -43,6 +43,7 @@
             this.findBy = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.sortBy = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // add
@@ -70,7 +71,6 @@
             this.find.Text = "Find by";
             this.find.UseVisualStyleBackColor = false;
             this.find.Click += new System.EventHandler(this.find_Click);
-            this.find.MouseMove += new System.Windows.Forms.MouseEventHandler(this.find_MouseMove);
             // 
             // sort
             // 
@@ -84,7 +84,6 @@
             this.sort.Text = "Sort by";
             this.sort.UseVisualStyleBackColor = false;
             this.sort.Click += new System.EventHandler(this.sort_Click);
-            this.sort.MouseMove += new System.Windows.Forms.MouseEventHandler(this.sort_MouseMove);
             // 
             // show
             // 
@@ -106,6 +105,7 @@
             this.title.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.title.Location = new System.Drawing.Point(4, 104);
             this.title.Name = "title";
+            this.title.ReadOnly = true;
             this.title.Size = new System.Drawing.Size(150, 32);
             this.title.TabIndex = 4;
             this.title.Text = "Title:";
@@ -124,6 +124,7 @@
             this.author.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.author.Location = new System.Drawing.Point(4, 202);
             this.author.Name = "author";
+            this.author.ReadOnly = true;
             this.author.Size = new System.Drawing.Size(150, 32);
             this.author.TabIndex = 6;
             this.author.Text = "Author:";
@@ -142,6 +143,7 @@
             this.textBox5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox5.Location = new System.Drawing.Point(4, 407);
             this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(190, 32);
             this.textBox5.TabIndex = 9;
             this.textBox5.Text = "Amout of pages:";
@@ -160,6 +162,7 @@
             this.year.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.year.Location = new System.Drawing.Point(4, 304);
             this.year.Name = "year";
+            this.year.ReadOnly = true;
             this.year.Size = new System.Drawing.Size(207, 32);
             this.year.TabIndex = 11;
             this.year.Text = "Year of publication:";
@@ -173,18 +176,19 @@
             // 
             // findBy
             // 
-            this.findBy.Location = new System.Drawing.Point(247, 145);
+            this.findBy.Location = new System.Drawing.Point(246, 184);
             this.findBy.Name = "findBy";
             this.findBy.Size = new System.Drawing.Size(179, 31);
             this.findBy.TabIndex = 13;
+            this.findBy.TextChanged += new System.EventHandler(this.findBy_TextChanged);
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 25;
-            this.listBox1.Location = new System.Drawing.Point(247, 240);
+            this.listBox1.Location = new System.Drawing.Point(244, 240);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(180, 129);
+            this.listBox1.Size = new System.Drawing.Size(180, 254);
             this.listBox1.TabIndex = 14;
             // 
             // sortBy
@@ -194,12 +198,26 @@
             this.sortBy.Size = new System.Drawing.Size(179, 31);
             this.sortBy.TabIndex = 15;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Title",
+            "Author",
+            "Year"});
+            this.comboBox1.Location = new System.Drawing.Point(244, 145);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(182, 33);
+            this.comboBox1.TabIndex = 16;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // menuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(916, 647);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.sortBy);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.findBy);
@@ -240,5 +258,6 @@
         private TextBox findBy;
         private ListBox listBox1;
         private TextBox sortBy;
+        private ComboBox comboBox1;
     }
 }

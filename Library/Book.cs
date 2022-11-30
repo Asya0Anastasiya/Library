@@ -45,5 +45,10 @@ namespace Library
             PublicationYear = publicationYear;
             Pages = pages;
         }
+
+        public override string ToString()
+        {
+            return $"Title: {Title}\n Author: {Author}\n Year of publication: {PublicationYear}\n Amount of pages: {Pages}";
+        }
     }
 }
